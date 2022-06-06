@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react'
+import Task from './Task'
 
-function TaskList() {
+function TaskList({ t }) {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {t.map(item => (
+        <Task key={item.id} name={item.text} category={item.category} />
+      ))}
     </div>
-  );
+  )
 }
 
-export default TaskList;
+export default TaskList
